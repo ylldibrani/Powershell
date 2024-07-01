@@ -5,6 +5,8 @@ param (
     [string]$AppSecret
 )
 
+Disable-AzContextAutosave
+
 $SecureSecret = $AppSecret | ConvertTo-SecureString -AsPlainText -Force
 
 $Credential = New-Object -TypeName System.Management.Automation.PSCredential `
